@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "prefix": "#",
+    "name": "Birinchi taom"
+  },
+  {
+    "id": 2,
+    "prefix": "#",
+    "name": "Ikkinchi taom"
+  },
+  {
+    "id": 3,
+    "prefix": "#",
+    "name": "Uyg`ur taomlari"
+  },
+  {
+    "id": 4,
+    "prefix": "#",
+    "name": "Yevropa taomlari"
+  },
+  {
+  "id": 5,
+  "prefix": "#",
+  "name": "Salatlar"
+  },
+  {
+    "id": 6,
+    "prefix": "#",
+    "name": "Desertlar"
+  },
+  {
+    "id": 7,
+    "prefix": "#",
+    "name": "Ichimliklar"
+  }
+
+]
