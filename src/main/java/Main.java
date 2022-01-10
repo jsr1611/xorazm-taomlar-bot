@@ -4,8 +4,11 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import service.StoreDataToDbFromJson;
 
+import java.sql.SQLException;
+
 public class Main {
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws SQLException {
         StoreDataToDbFromJson.store();
         try {
             TelegramBotsApi api = new TelegramBotsApi(DefaultBotSession.class);

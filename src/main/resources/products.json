@@ -4,34 +4,34 @@
   "categoryId": 1,
   "name": "MASTAVA",
   "price": 8500.0,
-  "imageUrl": "#"
+  "imageUrl": "https://cdni.rbth.com/rbthmedia/images/2020.07/article/5f2429b915e9f972d233d365.png"
 },
   {
     "id": 2,
     "categoryId": 1,
     "name": "CHUCHVARA",
     "price": 9500.0,
-    "imageUrl": "#"
+    "imageUrl": "https://t3.ftcdn.net/jpg/02/32/38/54/360_F_232385404_fq5uOgpY5wwDNANIS4DYicAM736DJnCp.jpg"
   },
   {
     "id": 3,
     "categoryId": 1,
     "name": "OKROSHKA",
     "price": 20500.0,
-    "imageUrl": "#"
+    "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/0f/8c/77/87/mastava-soup-hearty-beef.jpg"
   },
   {
     "id": 4,
     "categoryId": 1,
     "name": "KO`ZA SHO`RVA",
     "price": 19000.0,
-    "imageUrl": "#"
+    "imageUrl": "https://proc.uz/storage/stats/June2021/f5kJQaLKT5xtsEQdWMqz.jpg"
   },
   {
     "id": 5,
     "categoryId": 1,
     "name": "TUXUM BARAK",
     "price": 10500.0,
-    "imageUrl": "#"
+    "imageUrl": "https://zira.uz/wp-content/uploads/2019/11/tukhum-barak-5.jpg"
   }
 ]
