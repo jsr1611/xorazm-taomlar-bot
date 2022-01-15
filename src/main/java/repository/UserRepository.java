@@ -11,4 +11,8 @@ public interface UserRepository {
     void save(User user) throws SQLException;
 
     boolean existsById(Long id);
+
+    User findByChatId(Long chatId);
+
+    void update(User user);
 }

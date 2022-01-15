@@ -11,4 +11,6 @@ public interface CategoryRepository {
     Category findByName(String name) throws SQLException;
 
     void saveAll(List<Category> categories) throws SQLException;
+
+    List<Category> findAll();
 }

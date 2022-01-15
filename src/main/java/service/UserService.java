@@ -8,4 +8,9 @@ public interface UserService {
     void save(User user) throws SQLException;
 
     boolean existsByChatId(Long chatId) throws SQLException;
+
+    User findByChatId(Long chatId);
+
+    void update(User user);
+
 }

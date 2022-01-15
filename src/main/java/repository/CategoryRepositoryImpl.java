@@ -5,6 +5,7 @@ import model.Category;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static config.DbConfig.connection;
@@ -49,5 +50,26 @@ public class CategoryRepositoryImpl implements CategoryRepository{
                 statement.executeUpdate();
             }
         }
+    }
+
+    @Override
+    public List<Category> findAll() {
+        List<Category> categories = new ArrayList<>();
+        String SELECT_ALL = "SELECT * FROM categories";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(SELECT_ALL);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                categories.add(new Category(
+                         resultSet.getLong("id"),
+                        resultSet.getString("prefix"),
+                        resultSet.getString("name")));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return categories;
     }
 }

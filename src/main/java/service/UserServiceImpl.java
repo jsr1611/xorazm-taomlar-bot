@@ -20,4 +20,14 @@ public class UserServiceImpl implements UserService {
     public boolean existsByChatId(Long chatId) throws SQLException {
         return userRepo.existsByChatId(chatId);
     }
+
+    @Override
+    public User findByChatId(Long chatId) {
+        return userRepo.findByChatId(chatId);
+    }
+
+    @Override
+    public void update(User user) {
+        userRepo.update(user);
+    }
 }

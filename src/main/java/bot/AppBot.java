@@ -35,6 +35,9 @@ public class AppBot extends TelegramLongPollingBot {
                     case BotMenu.START:
                         sendMessage = BotService.start(update);
                         break;
+                    case BotMenu.MENU:
+                        sendMessage = BotService.menu(update.getMessage().getChatId());
+                        break;
 
 
                 }

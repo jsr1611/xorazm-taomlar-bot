@@ -1,6 +1,8 @@
 package repository;
 
+import enums.BotState.BotState;
 import model.User;
+import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,5 +50,42 @@ public class UserRepositoryImpl implements UserRepository {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public User findByChatId(Long chatId) {
+        String SELECT_USER_BY_CHAT_ID = "SELECT * FROM users WHERE chat_id = " + chatId;
+        try {
+         PreparedStatement statement = connection.prepareStatement(SELECT_USER_BY_CHAT_ID);
+         ResultSet resultSet = statement.executeQuery();
+         if(resultSet.next()){
+             return new User(
+                     resultSet.getLong("id"),
+                     resultSet.getLong("chat_id"),
+                     resultSet.getString("first_name"),
+                     resultSet.getString("last_name"),
+                     resultSet.getString("user_name"),
+                     resultSet.getString("phone_number"),
+                     BotState.fromString(resultSet.getString("bot_state")));
+         }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public void update(User user) {
+        String UPDATE_USER_DATA = "UPDATE users SET first_name = ?, last_name = ?, user_name = ?, bot_state = ? WHERE id = " + user.getId();
+        try {
+            PreparedStatement statement = connection.prepareStatement(UPDATE_USER_DATA);
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getLastName());
+            statement.setString(3, user.getUserName());
+            statement.setString(4, user.getBotState().name());
+            statement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
